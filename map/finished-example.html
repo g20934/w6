@@ -53,6 +53,15 @@
     }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiV2ZbFIYuD3N4hzGLstSn2e4ZG5A7QlU&callback=initMap"
-    async defer></script>
+    async defer>
+      //async（アシンク）: （巨大な）JavaScriptを読み終わるのを待たずにscriptタグ以降のhtml読んでいいよ(非同期）
+      //asyncだとHTMLが読み終わっていなくてもJSが動作してしまう可能性ある
+      //defer(ディファー）:JavaScriptの実行はHTMLを読み込みが終わってから
+      //何も書かなければdefalut: 順番通り
+      
+      
+      //HTMLを読んだ後に巨大な動画などが読み込まれる
+    
+    </script>
   </body>
 </html>
