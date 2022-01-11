@@ -42,7 +42,7 @@ window.onload = function checkCookie() {
 function initMap() {
       var myOptions = {
         zoom: 8,
-        center: {lat: 53.480759, lng: -2.242631},
+        center: {lat: -33.856125088797576, lng: 151.2150392079342},
         mapTypeId: google.maps.MapTypeId.TERRAIN,
         disableDefaultUI: true,
         // Step 4. Customize displayed controls
@@ -57,7 +57,7 @@ function initMap() {
       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
       var marker = new google.maps.Marker({
-        position: {lat: 53.480759, lng: -2.242631},//地図上のどこに置きたいか
+        position: {lat: -33.856125088797576, lng: 151.2150392079342},//地図上のどこに置きたいか-33.856125088797576, 151.2150392079342
         icon: iconBase + 'flag_maps.png',//文字列の連結. パス+ファイル名→アイコンの置いてある場所
         map: map//map(文字列） : map（変数 30行目)　どの地図に表示するか
       });
