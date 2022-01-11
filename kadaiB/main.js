@@ -64,7 +64,7 @@ function initMap() {
 
       // Step 3. Add info window
 
-      var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">Custom info window</h2><p>This is a cool custom info window.</p></div>';
+      var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">オーストラリア　オペラハウス</h2><p>その地点に関する説明 興味を持った理由</p></div>';
 
       var infowindow = new google.maps.InfoWindow({//インフォウィンドウメソッドを使ってインスタンスを作る(中身は44行目)
         content: contentString
