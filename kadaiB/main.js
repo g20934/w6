@@ -24,7 +24,7 @@ function getCookie(cname) {
   return "";
 }
 
-function checkCookie() {
+window.onload = function checkCookie() {
   var user=getCookie("userName");
   console.log(user);
   if (user != "" ) {
