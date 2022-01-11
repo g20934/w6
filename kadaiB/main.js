@@ -38,3 +38,39 @@ window.onload = function checkCookie() {
 }
 
 
+//機能2
+function initMap() {
+      var myOptions = {
+        zoom: 8,
+        center: {lat: 53.480759, lng: -2.242631},
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        disableDefaultUI: true,
+        // Step 4. Customize displayed controls
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: true
+      }
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+      // Step 2. Add custom icon
+      //Google上にアイコン(白い部分は透明）が置いてある場所
+      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
+      var marker = new google.maps.Marker({
+        position: {lat: 53.480759, lng: -2.242631},//地図上のどこに置きたいか
+        icon: iconBase + 'flag_maps.png',//文字列の連結. パス+ファイル名→アイコンの置いてある場所
+        map: map//map(文字列） : map（変数 30行目)　どの地図に表示するか
+      });
+
+      // Step 3. Add info window
+
+      var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">Custom info window</h2><p>This is a cool custom info window.</p></div>';
+
+      var infowindow = new google.maps.InfoWindow({//インフォウィンドウメソッドを使ってインスタンスを作る(中身は44行目)
+        content: contentString
+      });
+
+      marker.addListener('click', function() {//イベントハンドラー 旗を押したならばこの関数を起動してください(名前なしの関数
+        infowindow.open(map, marker);//infowindowが開く マップの上のマーカーに結びつける
+      });
+    }
