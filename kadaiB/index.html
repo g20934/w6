@@ -2,10 +2,34 @@
 <html>
   <head>
     <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webテクノロジーb課題B</title>
+    <style>
+      #map_canvas {
+        width: 600px;
+        height: 600px;
+      }
+    </style>
   </head>
   <body>
     <h1></h1>
+    <h2>Simple maps example</h2>
+
+    <div id="map_canvas"></div>
+    <script>
+    function initMap() {
+      var myOptions = {//オブジェクトで初期化
+        zoom: 16,//辞書形式　name:value 名前の値 keyとvalueの値をペアにする
+        center: {lat: 35.72222638304765, lng: 139.4665237132706},//緯度53度, 経度-2度（イギリス） JSON
+        mapTypeId: google.maps.MapTypeId.TERRAIN,//google.mapsが決めているTERRAINという値
+        disableDefaultUI: true//ユーザーインターフェースをどうする？　今回は付けなくていいよという指定
+      }
+      //map_canvasをつけたところ(どこに作って欲しいか)とOption(web上に表示するために必要な最低限条件）を入れてインスタンス(マップオブジェクト）を作っている
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiV2ZbFIYuD3N4hzGLstSn2e4ZG5A7QlU&callback=initMap"
+    async defer></script><!--アクセスしたらinit関数を呼ぶ-->
     <script src="main.js"></script>
   </body>
 </html>
