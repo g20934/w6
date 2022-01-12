@@ -10,15 +10,15 @@ function setCookie(cname,cvalue,exdays) {//使いたいクッキーの名前、�
 
 function getCookie(cname) {
   var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
+  var decodedCookie = decodeURIComponent(document.cookie);//UTF-8の%xx表現形式から文字列に変換
+  var ca = decodedCookie.split(';');//文字列.split(';'): 文字列を区切り文字;で分割する　戻り値は配列
   for(var i = 0; i < ca.length; i++) {
     var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
+    while (c.charAt(0) == ' ') {//cの0文字目が' 'だったら
+      c = c.substring(1);//cは1文字目以降だけにする
     }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
+    if (c.indexOf(name) == 0) {//文字列からnameを検索していき、最初に一致した位置が0文字目だったら
+      return c.substring(name.length, c.length);//name.length文字目〜（c.length - 1）文字目までを返す.
     }
   }
   return "";
