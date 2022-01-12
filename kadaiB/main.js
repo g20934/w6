@@ -42,7 +42,7 @@ window.onload = function checkCookie() {
 function initMap() {
       var myOptions = {//オブジェクトで初期化
         zoom: 16,//辞書形式(JSON形式）　key:value keyとvalueの値をペアにする（値はどんな型でもOK）
-        center: {lat: -33.856125088797576, lng: 151.2150392079342},//緯度約-33度, 経度151度（オーストラリア　)
+        center: {lat: -33.8564976041549, lng: 151.21525626976288},//緯度約-33度, 経度151度（オーストラリア オペラハウス　)
         mapTypeId: google.maps.MapTypeId.TERRAIN,//google.mapsが決めているTERRAINという値
         disableDefaultUI: true,//ユーザーインターフェースをどうするか。今回は付けなくていいよという指定
         
@@ -59,7 +59,7 @@ function initMap() {
       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
       var marker = new google.maps.Marker({
-        position: {lat: -33.856125088797576, lng: 151.2150392079342},//地図上のどこに置きたいか-33.856125088797576, 151.2150392079342
+        position: {lat: -33.8564976041549, lng: 151.21525626976288},//地図上のどこに置きたいか-33.856125088797576, 151.2150392079342
         icon: iconBase + 'flag_maps.png',//文字列の連結. パス+ファイル名→アイコンの置いてある場所
         map: map//map(文字列） : map（変数 55行目)　どの地図に表示するか
       });
