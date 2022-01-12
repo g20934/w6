@@ -1,5 +1,5 @@
 //機能1
-let myHeading = document.querySelector('h1');
+let myHeading = document.querySelector('h2');
 
 function setCookie(cname,cvalue,exdays) {//使いたいクッキーの名前、入れたい値、何日間有効のクッキーとしたいか
   var d = new Date();//組み込みクラスDateを使って、この瞬間のオブジェクトを表すものを作る
