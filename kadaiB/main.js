@@ -41,7 +41,7 @@ window.onload = function checkCookie() {
 //機能2
 function initMap() {
       var myOptions = {
-        zoom: 8,
+        zoom: 16,
         center: {lat: -33.856125088797576, lng: 151.2150392079342},
         mapTypeId: google.maps.MapTypeId.TERRAIN,
         disableDefaultUI: true,
