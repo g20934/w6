@@ -41,7 +41,7 @@ window.onload = function checkCookie() {
 //機能2
 function initMap() {
       var myOptions = {//オブジェクトで初期化
-        zoom: 16,//辞書形式　name:value 名前の値 keyとvalueの値をペアにする
+        zoom: 16,//辞書形式(JSON形式）　key:value keyとvalueの値をペアにする（値はどんな型でもOK）
         center: {lat: -33.856125088797576, lng: 151.2150392079342},//緯度約-33度, 経度151度（オーストラリア　)
         mapTypeId: google.maps.MapTypeId.TERRAIN,//google.mapsが決めているTERRAINという値
         disableDefaultUI: true,//ユーザーインターフェースをどうするか。今回は付けなくていいよという指定
@@ -51,28 +51,28 @@ function initMap() {
         mapTypeControl: true,//地図の種類を変更できる, マップタイプ・コントローラの表示を表示するかどうか
         scaleControl: true//地図のスケールコントローラを表示するかどうか
       }
-      //map_canvasをつけたところ(どこに作って欲しいか)とOption(web上に表示するために必要な最低限条件）を入れてインスタンス(マップオブジェクト）を作っている
+      //「idがmap_canvasであるところにマップオブジェクトを作って欲しい」とOption(web上に表示するために必要な最低限条件）を入れてインスタンス(マップオブジェクト）を作っている
       var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
       // Step 2. Add custom icon
-      //Google上にアイコン(白い部分は透明）が置いてある場所
+      //Google上にアイコン(png形式, 白い部分は透明）が置いてある場所
       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
       var marker = new google.maps.Marker({
         position: {lat: -33.856125088797576, lng: 151.2150392079342},//地図上のどこに置きたいか-33.856125088797576, 151.2150392079342
         icon: iconBase + 'flag_maps.png',//文字列の連結. パス+ファイル名→アイコンの置いてある場所
-        map: map//map(文字列） : map（変数 30行目)　どの地図に表示するか
+        map: map//map(文字列） : map（変数 55行目)　どの地図に表示するか
       });
 
       // Step 3. Add info window
-
+      //文字列
       var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">オーストラリア　オペラハウス</h2><p>その地点に関する説明 興味を持った理由</p></div>';
 
-      var infowindow = new google.maps.InfoWindow({//インフォウィンドウメソッドを使ってインスタンスを作る(中身は44行目)
+      var infowindow = new google.maps.InfoWindow({//インフォウィンドウクラス(Google Maps API)を使ってインスタンスを作る(中身は69行目)
         content: contentString
       });
 
-      marker.addListener('click', function() {//イベントハンドラー 旗を押したならばこの関数を起動してください(名前なしの関数
+      marker.addListener('click', function() {//イベントハンドラー 旗を押したならばこの関数を起動してください(名前なしの関数)と登録
         infowindow.open(map, marker);//infowindowが開く マップの上のマーカーに結びつける
       });
     }
