@@ -24,7 +24,7 @@ function getCookie(cname) {
   return "";
 }
 
-window.onload = function checkCookie() {
+window.onload = function checkCookie() {//画像など全て読み込んでから実行する
   var user=getCookie("userName");//11行目からの関数を呼び出す
   console.log(user);
   if (user != "" ) {//もしクッキーがあったら
