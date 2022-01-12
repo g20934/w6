@@ -25,14 +25,14 @@ function getCookie(cname) {
 }
 
 window.onload = function checkCookie() {
-  var user=getCookie("userName");
+  var user=getCookie("userName");//11行目からの関数を呼び出す
   console.log(user);
-  if (user != "" ) {
-    myHeading.innerHTML = "こんにちは" + user + "さん";
+  if (user != "" ) {//もしクッキーがあったら
+    myHeading.innerHTML = "今日は" + user + "さん";//表示する
   } else {//クッキーがない場合
      user = prompt("はじめまして。名前を教えてください:");
      if (user != "" && user != null) {
-       setCookie("userName", user, 10);
+       setCookie("userName", user, 10);//4行目からの関数を呼び出す. クッキー名はuserName, 値は変数userに入っているもの, 有効期限は10日間とした
      }
   }
 }
@@ -40,16 +40,18 @@ window.onload = function checkCookie() {
 
 //機能2
 function initMap() {
-      var myOptions = {
-        zoom: 16,
-        center: {lat: -33.856125088797576, lng: 151.2150392079342},
-        mapTypeId: google.maps.MapTypeId.TERRAIN,
-        disableDefaultUI: true,
+      var myOptions = {//オブジェクトで初期化
+        zoom: 16,//辞書形式　name:value 名前の値 keyとvalueの値をペアにする
+        center: {lat: -33.856125088797576, lng: 151.2150392079342},//緯度約-33度, 経度151度（オーストラリア　)
+        mapTypeId: google.maps.MapTypeId.TERRAIN,//google.mapsが決めているTERRAINという値
+        disableDefaultUI: true,//ユーザーインターフェースをどうするか。今回は付けなくていいよという指定
+        
         // Step 4. Customize displayed controls
-        zoomControl: true,
-        mapTypeControl: true,
-        scaleControl: true
+        zoomControl: true,//ズームコントローラを表示するかどうか
+        mapTypeControl: true,//地図の種類を変更できる, マップタイプ・コントローラの表示を表示するかどうか
+        scaleControl: true//地図のスケールコントローラを表示するかどうか
       }
+      //map_canvasをつけたところ(どこに作って欲しいか)とOption(web上に表示するために必要な最低限条件）を入れてインスタンス(マップオブジェクト）を作っている
       var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
       // Step 2. Add custom icon
